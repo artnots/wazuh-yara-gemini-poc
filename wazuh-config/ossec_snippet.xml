@@ -1,0 +1,12 @@
+<command>
+  <name>yara-active-response</name>
+  <executable>yara-active-response.exe</executable>
+  <timeout_allowed>no</timeout_allowed>
+</command>
+
+<active-response>
+  <disabled>no</disabled>
+  <command>yara-active-response</command>
+  <location>local</location>
+  <rules_id>100300</rules_id>
+</active-response>
