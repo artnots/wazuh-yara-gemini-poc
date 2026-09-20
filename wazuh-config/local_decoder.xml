@@ -1,0 +1,9 @@
+<decoder name="wazuh-yara">
+  <prematch>^wazuh-YARA:</prematch>
+</decoder>
+
+<decoder name="wazuh-yara-result">
+  <parent>wazuh-yara</parent>
+  <regex type="pcre2">^wazuh-YARA: (\S+) - Scan result: (\S+) \[description="([^"]+)"\] \((.+)\) \| chatgpt_response: (.*)$</regex>
+  <order>YARA.log_type, YARA.rule_name, YARA.rule_description, YARA.scanned_file, YARA.chatgpt_response</order>
+</decoder>
