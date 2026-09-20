@@ -1,0 +1,15 @@
+<group name="yara,yara_lab,syscheck,">
+  <rule id="100300" level="8">
+    <if_sid>554</if_sid>
+    <field name="file" type="pcre2">(?i)^c:\\wazuhlab\\incoming\\</field>
+    <description>New file added to the Windows YARA lab directory.</description>
+    <group>yara_lab,syscheck,</group>
+  </rule>
+
+  <rule id="100301" level="10">
+    <decoded_as>wazuh-yara</decoded_as>
+    <field name="YARA.rule_name">\S+</field>
+    <description>YARA rule matched: $(YARA.rule_name)</description>
+    <group>yara,yara_lab,malware,</group>
+  </rule>
+</group>
